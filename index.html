@@ -117,7 +117,8 @@
     </form>
     <a href="https://arms.sse.saveetha.com/"><button class="sb">Saveetha Arms</button></a>
     <p id="tipAmount"></p>
-    
+    <p id="tipAmoun"></p>
+    <p id="tipAmou"></p>
     </div>
     
     <marquee img src=""></marquee>
@@ -137,16 +138,27 @@
             }else if(w==null || w==""){
                 alert("The 2nd colum cannot be empty");
 
-            }else if(i==null || i==""){
-                alert("The 3rd colum cannot be empty");
+            }
+            else if(w==0 && q==0 && i==0){
+              document.querySelector("#tipAmount").innerHTML  = "The attendence after "+i+" days is "+(0)+"%";
             }
             else{
                 if(d>=r+(0.5)){
                     
                 document.querySelector("#tipAmount").innerHTML  = "The attendence after "+i+" days is "+(r+1)+"%";
+                if(r<80){
+                  document.querySelector("#tipAmoun").innerHTML  = "Please try to attend the class my dear student";
+                }else{
+                  document.querySelector("#tipAmou").innerHTML  = "good keep it up...";
+                }
 
                 }else{
                     document.querySelector("#tipAmount").innerHTML = "The attendence after "+i+" days is "+(r)+"%";
+                    if(r<80){
+                  document.querySelector("#tipAmoun").innerHTML  = "Please try to attend the class my dear student";
+                }else{
+                  document.querySelector("#tipAmou").innerHTML  = "good keep it up....";
+                }
                 }
 
             }
